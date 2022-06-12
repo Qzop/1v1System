@@ -1,0 +1,9 @@
+name: 1vs1
+author: PCPPUSHER (Fair)
+version: 1.0
+main: duel.Main.Main
+description: 1vs1 - Allows players to 1vs1 with kits and maps.
+
+commands:
+   duel:
+        description: Allows players to 1vs1 with kits and maps.
