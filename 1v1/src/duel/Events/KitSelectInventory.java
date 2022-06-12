@@ -18,7 +18,12 @@ public class KitSelectInventory implements Listener
 	
 	public void kitInventory(Player p)
 	{
-		Inventory kitInv = plugin.getServer().createInventory(null, 9, ChatColor.AQUA + "Kit Select");
+		Inventory kitInv = plugin.getServer().createInventory(null, 27, ChatColor.AQUA + "Kit Select");
+		
+		ItemStack filler = new ItemStack(Material.STAINED_GLASS_PANE, 1, (byte) 0);
+		ItemMeta fillerMeta = filler.getItemMeta();
+		fillerMeta.setDisplayName(" ");
+		filler.setItemMeta(fillerMeta);
 		
 		Potion healingPot = new Potion(PotionType.INSTANT_HEAL, 1);
 		ItemStack noDebuff = healingPot.toItemStack(1);
@@ -36,9 +41,35 @@ public class KitSelectInventory implements Listener
 		survivalGamesMeta.setDisplayName(ChatColor.YELLOW + "Survival Games");
 		survivalGames.setItemMeta(survivalGamesMeta);
 		
-		kitInv.setItem(3, noDebuff);
-		kitInv.setItem(4, buildUHC);
-		kitInv.setItem(5, survivalGames);
+		ItemStack backButton = new ItemStack(Material.REDSTONE, 1, (byte) 0);
+		ItemMeta backButtonMeta = backButton.getItemMeta();
+		backButtonMeta.setDisplayName(ChatColor.RED + "Back");
+		backButton.setItemMeta(backButtonMeta);
+		
+		kitInv.setItem(0, filler);
+		kitInv.setItem(1, filler);
+		kitInv.setItem(2, filler);
+		kitInv.setItem(3, filler);
+		kitInv.setItem(4, filler);
+		kitInv.setItem(5, filler);
+		kitInv.setItem(6, filler);
+		kitInv.setItem(7, filler);
+		kitInv.setItem(8, filler);
+		kitInv.setItem(9, filler);
+		kitInv.setItem(17, filler);
+		kitInv.setItem(18, filler);
+		kitInv.setItem(19, filler);
+		kitInv.setItem(20, filler);
+		kitInv.setItem(21, filler);
+		kitInv.setItem(22, filler);
+		kitInv.setItem(23, filler);
+		kitInv.setItem(24, filler);
+		kitInv.setItem(25, filler);
+		
+		kitInv.setItem(12, noDebuff);
+		kitInv.setItem(13, buildUHC);
+		kitInv.setItem(14, survivalGames);
+		kitInv.setItem(26, backButton);
 		
 		p.openInventory(kitInv);
 	}
